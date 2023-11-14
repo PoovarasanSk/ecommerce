@@ -1,0 +1,51 @@
+{% extends 'shop/layouts/main.html' %}
+{% block title %}
+Registration || Mens Wear
+{% endblock title %}
+
+{% block content %}
+<section class="py-5 text-center" id="content_body">
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Bestsellers</h1>
+            <p class="lead text-muted">Our most popular products based on sales. Updated hourly</p>
+            <p>
+                <a href="" class="btn btn-primary my-2">Already User</a>
+                <a href="" class="btn btn-secondary my-2">Register</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-4" id="content_body">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-2 h1" id="content_title">Categories</h4>
+                <hr style="border-color:#b8bfc2;">
+            </div>
+
+
+            {% for item in catagory %}
+            <div class="col-md-4 col-lg-3">
+                <a class="category_product_title" href="{% url 'collectionsview' item.name %}">
+                    <div class="card my-3" id="items">
+                        {% if item.image %}
+                        <img src="{{item.image.url}}" class="card-image-top" alt="categories">
+                        {% endif %}
+                        <div class="card-body">
+                            <h4 class="card-title text-primary">{{item.name}}</h4>
+                            <p class="card-text">{{item.description}}</p>
+                            <!-- <a href="" class="btn btn-primary">View Details</a> -->
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+{% endblock content %}
