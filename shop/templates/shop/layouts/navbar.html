@@ -1,0 +1,30 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <span id="logo">
+          <img src="{% static 'images/mw_logo_sm.png' %}" alt="">
+        </span>Mens Wear</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/' %} active {% endif %}" aria-current="page" href="{% url 'home' %}">
+              Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/register/' %} active {% endif %}" href="{% url 'register' %}">
+              Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/collections/' %} active {% endif %}" href="{% url 'collections' %}">
+              Collections</a>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

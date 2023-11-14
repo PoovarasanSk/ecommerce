@@ -1,0 +1,39 @@
+{% extends 'shop/layouts/main.html' %}
+
+{% block title %}
+Mens Wear
+{% endblock title %}
+
+{% block content %}
+<section class="py-4" id="content_body">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="product_title mt-5 mb-3 h1">{{catagory_name}}</h4>
+                <hr style="border-color: gray;">
+            </div>
+
+            {% for item in products %}
+            <div class="col-md-4 col-lg-3">
+                <!-- <a href="{% url 'collectionsview' item.name %}"> -->
+                    <div class="card my-3" id="items">
+                        {% if item.product_image %}
+                        <img src="{{item.product_image.url}}" class="card-image-top" id="product_img" alt="categories">
+                        {% endif %}
+                        <div class="card-body">
+                            <h6 class="" id="product_brand">{{item.vandor}}</h6>
+                            <h4 class="card-title text-primary">{{item.name}}</h4>
+                            <p class="card-text">
+                                <span class="new_price" id="new_price">Rs.{{item.selling_price}}</span>
+                                <span class="old_price" id="old_price"><s>Rs.{{item.original_price}}</s></span>
+                            </p>
+                            <!-- <a href="" class="btn btn-primary">View Details</a> -->
+                        </div>
+                    </div>
+                <!-- </a> -->
+            </div>
+            {% endfor %} 
+        </div>
+    </div>
+</section>
+{% endblock content %}

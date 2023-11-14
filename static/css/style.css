@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Montserrat&family=Noto+Sans:wght@300;400;500;700&display=swap');
+.carousel-item img{
+    object-fit: cover;
+    /* object-position: top; */
+    height: 50vh;
+    overflow: hidden;
+}
+
+html{
+    font-size: 14px;
+}
+body{
+    /* font-family: 'Noto Sans',sans-serif !important; */
+    font-family: 'Montserrat', sans-serif !important;
+}
+a{
+    text-decoration: none !important;
+}
+
+.card-image-top{
+    height: 40vh;
+    width: 100%;
+}
+nav,
+footer {
+    background-color: #190482 !important;
+}
+nav .navbar-brand,
+footer,
+.navbar-toggler,
+.navbar-nav .nav-link:not(.active){
+    color: white !important;
+}
+.navbar-brand{
+    font-size: 2.5rem !important;
+}
+.navbar-nav .nav-link{
+    font-size: 1.05rem;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show , .nav-link:hover {
+    transition: .3s !important;
+    background-color: #C2D9FF;
+    /* color: #C2D9FF !important; */
+    /* font-size: 1.1rem; */
+}
+
+
+/* ====================Catagory================= */
+
+nav #logo img{
+    width: 13%;
+}
+
+/* ====================Catagory================= */
+
+#content_body{
+    background-color: #C2D9FF;
+}
+#content_title,
+.product_title{
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+}
+#content_title::after,
+#content_title::before,
+.product_title::after,
+.product_title::before{
+    content: " ";
+    display: block;
+    border-bottom: 2px solid #c50000;
+    border-top: 2px solid #c50000;
+    height: 10px;
+}
+.category_product_title,
+.product_title{
+    text-transform: capitalize;
+}
+
+/* ====================Products================= */
+#items:hover{
+    border: 2px solid gray;
+    cursor: pointer;
+}
+
+#product_brand{
+    font-weight: bold;
+    color: gray !important;
+}
+#old_price {
+    font-weight: bold;
+    color: red;
+}
+#new_price{
+    font-size: 1.35rem;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 5px;
+}
+/* .card #product_img .card-image-top{
+    height: 10vh !important;
+} */
